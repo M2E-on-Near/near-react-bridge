@@ -6,9 +6,7 @@ function App() {
     const [isSigned, setIsSigned] = useState(false);
 
     useEffect(() => {
-        const url = new URL(window.location.href);
-        const action = url.searchParams.get('action');
-        switch (action) {
+        switch (window.action?.action) {
             case 'sign-in':
                 if (isSignedIn()) {
                     window.ReactNativeWebView.postMessage("success");
