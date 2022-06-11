@@ -33,3 +33,19 @@ export const isSignedIn = () => {
 export const signOut = () => {
     wallet.signOut();
 }
+
+function getKrockContract() {
+    return new nearAPI.Contract(
+        wallet.account(),
+        'krock.testnet',
+    {
+        viewMethods: ['ft_balance_of']
+        }
+    );
+}
+
+export async function ft_balance_of() {
+    const contract = getKrockContract();
+    return contract.ft_balance_of({account_id: wallet.account().accountId})
+        .catch (e => {console.error(e); return 0;});
+}
