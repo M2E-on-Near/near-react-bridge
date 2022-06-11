@@ -6,6 +6,21 @@ function App() {
     const [isSigned, setIsSigned] = useState(false);
 
     useEffect(() => {
+        const url = new URL(window.location.href);
+        const action = url.searchParams.get('action');
+        switch (action) {
+            case 'sign-in':
+                if (isSignedIn()) {
+                    window.ReactNativeWebView.postMessage("success");
+                } else {
+                    signIn();
+                }
+                break;
+            case 'sign-out':
+                signOut();
+                break;
+            default: break;
+        }
         setIsSigned(isSignedIn());
     }, [])
   return (
