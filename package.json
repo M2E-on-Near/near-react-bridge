@@ -1,7 +1,7 @@
 {
   "name": "flanears-react-bridge",
   "version": "0.1.0",
-  "homepage": "https://M2E-on-Near.github.io/bridge",
+  "homepage": "https://flanear.github.io/bridge",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
