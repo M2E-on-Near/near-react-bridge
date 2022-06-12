@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './App.css';
-import {signIn, signOut, isSignedIn, ft_balance_of} from "./near";
+import {signIn, signOut, isSignedIn, ft_balance_of, nft_mint} from "./near";
 
 function App() {
     const [isSigned, setIsSigned] = useState(false);
@@ -35,6 +35,7 @@ function App() {
           <button onClick={signIn}>signIn</button>
           <button onClick={signOut}>signOut</button>
           <button onClick={ft_balance_of}>ft_ba</button>
+            <button onClick={nft_mint}>nft)mit</button>
       </header>
     </div>
   );
