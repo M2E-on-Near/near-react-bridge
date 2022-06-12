@@ -49,7 +49,7 @@ function getKrockNftContract() {
         wallet.account(),
         'krock-nft.testnet',
     {
-        changeMethods: ['nft_mint'],
+        changeMethods: ['nft_mint', 'update_stats'],
         }
     );
 }

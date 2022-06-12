@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from "react";
 import './App.css';
-import {signIn, signOut, isSignedIn, ft_balance_of, nft_mint} from "./near";
+import {signIn, signOut, isSignedIn, ft_balance_of, nft_mint, update_stats} from "./near";
 
 function App() {
     const [isSigned, setIsSigned] = useState(false);
 
     useEffect(() => {
-        switch (window.action?.action) {
+        const url = new URL(window.location.href);
+        const action = url.searchParams.get('action');
+        switch (action) {
             case 'sign-in':
                 if (isSignedIn()) {
                   window.ReactNativeWebView.postMessage("success");
@@ -15,6 +17,8 @@ function App() {
                 }
                 break;
             case 'sign-out':
+                window.ReactNativeWebView?.postMessage("sign-out");
+                console.log('sidsng');
                 signOut();
                 break;
             case 'ft_balance':
