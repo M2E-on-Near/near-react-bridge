@@ -1,12 +1,14 @@
 {
   "name": "flanears-react-bridge",
   "version": "0.1.0",
+  "homepage": "https://M2E-on-Near.github.io/bridge",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "buffer": "^6.0.3",
+    "gh-pages": "^4.0.0",
     "near-api-js": "^0.45.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -14,6 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -e bridge",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
